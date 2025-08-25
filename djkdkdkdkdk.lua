@@ -483,7 +483,7 @@ local function removeESP(character)
     end
 end
 
-local function onCharacterAdded(character, player)
+local function xzcffconCharacterAdded(character, player)
     if espEnabled then
         applyESP(character, player)
     end
@@ -498,10 +498,10 @@ end
 local function createESP(player)
     if player ~= game.Players.LocalPlayer then
         player.CharacterAdded:Connect(function(character)
-            onCharacterAdded(character, player)
+            xzcffconCharacterAdded(character, player)
         end)
         if player.Character then
-            onCharacterAdded(player.Character, player)
+            xzcffconCharacterAdded(player.Character, player)
         end
     end
 end
